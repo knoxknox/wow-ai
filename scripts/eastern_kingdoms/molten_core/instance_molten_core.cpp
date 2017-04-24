@@ -108,38 +108,24 @@ void instance_molten_core::SetData(uint32 uiType, uint32 uiData)
             break;
         case TYPE_MAGMADAR:
             m_auiEncounter[uiType] = uiData;
-            if (uiData == DONE)
-                DoUseDoorOrButton(GO_RUNE_KRESS);
             break;
         case TYPE_GEHENNAS:
             m_auiEncounter[uiType] = uiData;
-            if (uiData == DONE)
-                DoUseDoorOrButton(GO_RUNE_MOHN);
             break;
         case TYPE_GARR:
             m_auiEncounter[uiType] = uiData;
-            if (uiData == DONE)
-                DoUseDoorOrButton(GO_RUNE_BLAZ);
             break;
         case TYPE_SHAZZRAH:
             m_auiEncounter[uiType] = uiData;
-            if (uiData == DONE)
-                DoUseDoorOrButton(GO_RUNE_MAZJ);
             break;
         case TYPE_GEDDON:
             m_auiEncounter[uiType] = uiData;
-            if (uiData == DONE)
-                DoUseDoorOrButton(GO_RUNE_ZETH);
             break;
         case TYPE_GOLEMAGG:
             m_auiEncounter[uiType] = uiData;
-            if (uiData == DONE)
-                DoUseDoorOrButton(GO_RUNE_THERI);
             break;
         case TYPE_SULFURON:
             m_auiEncounter[uiType] = uiData;
-            if (uiData == DONE)
-                DoUseDoorOrButton(GO_RUNE_KORO);
             break;
         case TYPE_MAJORDOMO:
             m_auiEncounter[uiType] = uiData;
@@ -152,10 +138,10 @@ void instance_molten_core::SetData(uint32 uiType, uint32 uiData)
     }
 
     // Check if Majordomo can be summoned
-    if (uiData == DONE)
+    if (uiData == SPECIAL)
         DoSpawnMajordomoIfCan(false);
 
-    if (uiData == DONE)
+    if (uiData == DONE || uiData == SPECIAL)
     {
         OUT_SAVE_INST_DATA;
 
@@ -194,7 +180,7 @@ void instance_molten_core::DoSpawnMajordomoIfCan(bool bByPlayerEnter)
     // Check if all rune bosses are done
     for (uint8 i = TYPE_MAGMADAR; i < TYPE_MAJORDOMO; ++i)
     {
-        if (m_auiEncounter[i] != DONE)
+        if (m_auiEncounter[i] != SPECIAL)
             return;
     }
 
