@@ -9,4 +9,4 @@ Only for historical purposes. Please use latest ScriptDev2 to run emu for nowada
 ## resources
 - [WoWDev wiki](https://wowdev.wiki)
 - [Classic WoW Database](http://db.vanillagaming.org)
-- [Classic WoW Locations](http://docs.getmangos.com/en/latest/database/contributing/region-levels.html)
+- [Formulas & Game Mechanics](http://wow.gamepedia.com/Category:Formulas_and_game_mechanics)
